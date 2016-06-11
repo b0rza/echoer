@@ -1,0 +1,31 @@
+<div>
+  <div id="search-form">
+    <form @submit.prevent="newSubscription">
+      <input class="swish-input" v-model="newSearchTerm" placeholder="JavaScript" />
+      <button class="bright-blue-hover btn-white">Search</button>
+    </form>
+  </div>
+
+  <div class="container tweets-container">
+    <div id="channels-list">
+      <div class="channel" v-for="channel in channels">
+        <h3>
+          <img class="twitter-icon" src="~assets/logo.png" width="30" />
+          Tweets for {{ channel.term }}
+        </h3>
+        <div id="subscription-controls">
+          <button @click.prevent="toggleSearch(channel)">
+            {{channel.active ? 'Stop' : 'Restart'}} Stream
+          </button>
+          <button @click.prevent="clearSearch(channel)">
+            Remove Results
+          </button>
+        </div>
+        <subscription-component
+          :channel="channel"
+          :pusher="pusher">
+        </subscription-component>
+      </div>
+    </div>
+  </div>
+</div>
