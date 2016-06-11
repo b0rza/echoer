@@ -1,8 +1,12 @@
 <script>
   import template from './template.html';
+  import Subscription from 'components/subscription/subscription.vue';
 
   export default {
     template,
+    components: {
+      Subscription,
+    },
     data() {
       return {
         newSearchTerm: '',
