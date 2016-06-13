@@ -1,8 +1,8 @@
 <script>
-  // import template from './template.html';
+  import template from './template.html';
 
   export default {
-    // template,
+    template,
     props: [
       'channel',
       'pusher',

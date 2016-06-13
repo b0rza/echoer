@@ -29,6 +29,11 @@
           }
         }
       },
+      clearSearch(clearedChannel) {
+        this.channels = this.channels.filter(channel =>
+          clearedChannel.term !== channel.term
+        );
+      },
     },
   };
 </script>
